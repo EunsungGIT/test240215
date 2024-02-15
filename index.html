@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test240215</title>
+    <link rel="stylesheet" href="./jquery.fullPage.css">
+    <style>
+        .wrap {}
+        .wrap section {
+            width: 100vw; height: 100vh;
+        }
+        .wrap .bg1 {
+            background: red;
+        }
+        .wrap .bg2 {
+            background: yellow;
+        }
+        .wrap .bg3 {
+            background: green;
+        }
+        .wrap .bg4 {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="section bg1">
+            <a href="#" class="h1">제목1</a>
+            <a href="#" class="h2">제목2</a>
+            <p class="p1">제이쿼리는 자바스크립트 라이브러리입니다.</p>
+            <p class="p2">제이쿼리는 DOM 이벤트와 스타일을 자바스크립트보다 쉽게 제작할 수 있습니다</p>
+        </div>
+        <div class="section bg2"></div>
+        <div class="section bg3"></div>
+        <div class="section bg4"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./jquery.fullPage.js"></script>
+    <script>
+        $('.wrap').fullpage({
+            scrollBar:true,
+        })
+
+        $('.p2').css('display','none')
+        $('.h1').on('click',function(){
+            $('.p1').css('display','block')
+            $('.p2').css('display','none')
+            $('.h1').css('border','1px solid #000')
+            $('.h2').css('border','none')
+        })
+        $('.h2').on('click',function(){
+            $('.p1').css('display','none')
+            $('.p2').css('display','block')
+            $('.h1').css('border','none')
+            $('.h2').css('border','1px solid #000')
+        })
+    </script>
+</body>
+</html>
